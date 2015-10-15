@@ -20,6 +20,7 @@
 @property (nonatomic, weak) IBOutlet PickerView *bottomPicker;
 @property (nonatomic, weak) IBOutlet UILabel *fromCurrencyLabel;
 @property (nonatomic, weak) IBOutlet UILabel *toCurrencyLabel;
+@property (nonatomic, weak) IBOutlet UILabel *exchangeRateLabel;
 @property (nonatomic, strong) NumberPad *numberPad;
 
 @end
