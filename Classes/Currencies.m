@@ -8,6 +8,7 @@
 
 #import "Currencies.h"
 #import "AppDelegate.h"
+#import "Settings.h"
 
 NSString *const CurrenciesUpdatedNotification = @"CurrenciesUpdatedNotification";
 static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/rss.xml";
@@ -29,7 +30,7 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
 
 - (id)init {
     if (self = [super init]) {
-        self.lastUpdated = [NSDate date];
+        self.settings = [Settings currentSettings];
         
         //set currencies
         self.currencies = [Currencies allCurrenciesSorted];
@@ -45,8 +46,6 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
     }
     return self;
 }
-
-
 
 - (Currency *)currencyForCode:(NSString *)code
 {
@@ -104,7 +103,7 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
                 block(false);
             }
             else{
-                _lastUpdated = [NSDate date];
+                _settings.lastUpdate = [NSDate date];
                 NSArray *rates = jsonDict[@"query"][@"results"][@"rate"];
                 
                 for (NSDictionary *entry in rates)  {
@@ -148,7 +147,7 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
             if (currenciesUpdated == _currencies.count){
                 NSLog(@"Downloaded data from currency-api...");
 
-                _lastUpdated = [NSDate date];
+                _settings.lastUpdate = [NSDate date];
                 block(true);
             }
         }];
@@ -224,6 +223,7 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
     for (NSDictionary *currencyDict in currencies) {
         [Currency createFromDictionary:currencyDict inContext:context];
     }
+    [Settings currentSettings].lastUpdate = dictionary[@"lastUpdated"];
     
     [[AppDelegate instance] saveContext];
 }

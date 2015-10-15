@@ -22,7 +22,7 @@
 			<key>name</key>
 			<string>Aruban Florin</string>
 			<key>rate</key>
-			<real>2.2707899999999999</real>
+			<real>2.27079</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -32,7 +32,7 @@
 			<key>name</key>
 			<string>Australian Dollar</string>
 			<key>rate</key>
-			<real>1.4488000000000001</real>
+			<real>1.4488</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -42,7 +42,7 @@
 			<key>name</key>
 			<string>Bahamian Dollar</string>
 			<key>rate</key>
-			<real>1.2685999999999999</real>
+			<real>1.2686</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -52,7 +52,7 @@
 			<key>name</key>
 			<string>Bahraini Dinar</string>
 			<key>rate</key>
-			<real>0.47699000000000003</real>
+			<real>0.47699</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -62,7 +62,7 @@
 			<key>name</key>
 			<string>Bangladeshi Taka</string>
 			<key>rate</key>
-			<real>97.728999999999999</real>
+			<real>97.729</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -72,7 +72,7 @@
 			<key>name</key>
 			<string>Barbadian Dollar</string>
 			<key>rate</key>
-			<real>2.5371999999999999</real>
+			<real>2.5372</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -82,7 +82,7 @@
 			<key>name</key>
 			<string>Bermudian Dollar</string>
 			<key>rate</key>
-			<real>1.2685999999999999</real>
+			<real>1.2686</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -92,7 +92,7 @@
 			<key>name</key>
 			<string>Bolivian Boliviano</string>
 			<key>rate</key>
-			<real>8.7328600000000005</real>
+			<real>8.732860000000001</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -122,7 +122,7 @@
 			<key>name</key>
 			<string>British Pound Sterling</string>
 			<key>rate</key>
-			<real>0.78959999999999997</real>
+			<real>0.7896</real>
 			<key>symbol</key>
 			<string>£</string>
 		</dict>
@@ -154,7 +154,7 @@
 			<key>name</key>
 			<string>Canadian Dollar</string>
 			<key>rate</key>
-			<real>1.4220999999999999</real>
+			<real>1.4221</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -164,7 +164,7 @@
 			<key>name</key>
 			<string>Central African Franc</string>
 			<key>rate</key>
-			<real>655.95699999999999</real>
+			<real>655.957</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -184,7 +184,7 @@
 			<key>name</key>
 			<string>Chilean Peso</string>
 			<key>rate</key>
-			<real>748.81899999999996</real>
+			<real>748.819</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -194,7 +194,7 @@
 			<key>name</key>
 			<string>Chinese Yuan</string>
 			<key>rate</key>
-			<real>7.7708000000000004</real>
+			<real>7.7708</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -204,7 +204,7 @@
 			<key>name</key>
 			<string>Colombian Peso</string>
 			<key>rate</key>
-			<real>2604.1741000000002</real>
+			<real>2604.1741</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -214,7 +214,7 @@
 			<key>name</key>
 			<string>Croatian Kuna</string>
 			<key>rate</key>
-			<real>7.6373100000000003</real>
+			<real>7.63731</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -224,7 +224,7 @@
 			<key>name</key>
 			<string>Cyprus Pound</string>
 			<key>rate</key>
-			<real>0.58526999999999996</real>
+			<real>0.58527</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -234,7 +234,7 @@
 			<key>name</key>
 			<string>Czech Koruna</string>
 			<key>rate</key>
-			<real>27.545000000000002</real>
+			<real>27.545</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -244,7 +244,7 @@
 			<key>name</key>
 			<string>Danish Krone</string>
 			<key>rate</key>
-			<real>7.4439000000000002</real>
+			<real>7.4439</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -254,7 +254,7 @@
 			<key>name</key>
 			<string>Dominican Peso</string>
 			<key>rate</key>
-			<real>55.555300000000003</real>
+			<real>55.5553</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -264,7 +264,7 @@
 			<key>name</key>
 			<string>East Caribbean Dollar</string>
 			<key>rate</key>
-			<real>3.4252199999999999</real>
+			<real>3.42522</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -274,7 +274,7 @@
 			<key>name</key>
 			<string>Egyptian Pound</string>
 			<key>rate</key>
-			<real>9.0703999999999994</real>
+			<real>9.070399999999999</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -306,7 +306,7 @@
 			<key>name</key>
 			<string>Fijian Dollar</string>
 			<key>rate</key>
-			<real>2.4491800000000001</real>
+			<real>2.44918</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -316,7 +316,7 @@
 			<key>name</key>
 			<string>Gambian Dalasi</string>
 			<key>rate</key>
-			<real>50.215000000000003</real>
+			<real>50.215</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -326,7 +326,7 @@
 			<key>name</key>
 			<string>Ghana Cedi</string>
 			<key>rate</key>
-			<real>4.0370999999999997</real>
+			<real>4.0371</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -336,7 +336,7 @@
 			<key>name</key>
 			<string>Guatemalan Quetzal</string>
 			<key>rate</key>
-			<real>9.7088999999999999</real>
+			<real>9.7089</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -346,7 +346,7 @@
 			<key>name</key>
 			<string>Hong Kong Dollar</string>
 			<key>rate</key>
-			<real>9.8316499999999998</real>
+			<real>9.83165</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -356,7 +356,7 @@
 			<key>name</key>
 			<string>Hungarian Forint</string>
 			<key>rate</key>
-			<real>305.50999999999999</real>
+			<real>305.51</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -366,7 +366,7 @@
 			<key>name</key>
 			<string>Icelandic Krona</string>
 			<key>rate</key>
-			<real>153.44999999999999</real>
+			<real>153.45</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -376,7 +376,7 @@
 			<key>name</key>
 			<string>Indian Rupee</string>
 			<key>rate</key>
-			<real>77.393799999999999</real>
+			<real>77.3938</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -386,7 +386,7 @@
 			<key>name</key>
 			<string>Indonesian Rupiah</string>
 			<key>rate</key>
-			<real>15461.290999999999</real>
+			<real>15461.291</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -396,7 +396,7 @@
 			<key>name</key>
 			<string>Israeli Sheqel</string>
 			<key>rate</key>
-			<real>4.7371999999999996</real>
+			<real>4.7372</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -406,7 +406,7 @@
 			<key>name</key>
 			<string>Jamaican Dollar</string>
 			<key>rate</key>
-			<real>142.84559999999999</real>
+			<real>142.8456</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -416,7 +416,7 @@
 			<key>name</key>
 			<string>Japanese Yen</string>
 			<key>rate</key>
-			<real>136.07689999999999</real>
+			<real>136.0769</real>
 			<key>symbol</key>
 			<string>¥</string>
 		</dict>
@@ -428,7 +428,7 @@
 			<key>name</key>
 			<string>Jordanian Dinar</string>
 			<key>rate</key>
-			<real>0.89944000000000002</real>
+			<real>0.89944</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -448,7 +448,7 @@
 			<key>name</key>
 			<string>Kuwaiti Dinar</string>
 			<key>rate</key>
-			<real>0.36659999999999998</real>
+			<real>0.3666</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -468,7 +468,7 @@
 			<key>name</key>
 			<string>Latvian Lats</string>
 			<key>rate</key>
-			<real>0.70279999999999998</real>
+			<real>0.7028</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -478,7 +478,7 @@
 			<key>name</key>
 			<string>Lebanese Pound</string>
 			<key>rate</key>
-			<real>1912.4145000000001</real>
+			<real>1912.4145</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -488,7 +488,7 @@
 			<key>name</key>
 			<string>Lithuanian Litas</string>
 			<key>rate</key>
-			<real>3.4527999999999999</real>
+			<real>3.4528</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -498,7 +498,7 @@
 			<key>name</key>
 			<string>Macedonian Denar</string>
 			<key>rate</key>
-			<real>61.652799999999999</real>
+			<real>61.6528</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -508,7 +508,7 @@
 			<key>name</key>
 			<string>Malagasy Ariary</string>
 			<key>rate</key>
-			<real>3175.0300000000002</real>
+			<real>3175.03</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -518,7 +518,7 @@
 			<key>name</key>
 			<string>Malaysian Ringgit</string>
 			<key>rate</key>
-			<real>4.1390000000000002</real>
+			<real>4.139</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -528,7 +528,7 @@
 			<key>name</key>
 			<string>Maldivian Rufiyaa</string>
 			<key>rate</key>
-			<real>19.464600000000001</real>
+			<real>19.4646</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -538,7 +538,7 @@
 			<key>name</key>
 			<string>Mauritian Rupee</string>
 			<key>rate</key>
-			<real>39.969099999999997</real>
+			<real>39.9691</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -548,7 +548,7 @@
 			<key>name</key>
 			<string>Mexican Peso</string>
 			<key>rate</key>
-			<real>17.040700000000001</real>
+			<real>17.0407</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -568,7 +568,7 @@
 			<key>name</key>
 			<string>Moroccan Dirham</string>
 			<key>rate</key>
-			<real>11.085800000000001</real>
+			<real>11.0858</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -578,7 +578,7 @@
 			<key>name</key>
 			<string>Namibian Dollar</string>
 			<key>rate</key>
-			<real>14.008599999999999</real>
+			<real>14.0086</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -598,7 +598,7 @@
 			<key>name</key>
 			<string>New Zealand Dollar</string>
 			<key>rate</key>
-			<real>1.6124000000000001</real>
+			<real>1.6124</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -608,7 +608,7 @@
 			<key>name</key>
 			<string>Nigerian Naira</string>
 			<key>rate</key>
-			<real>207.92769999999999</real>
+			<real>207.9277</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -618,7 +618,7 @@
 			<key>name</key>
 			<string>Norwegian Krone</string>
 			<key>rate</key>
-			<real>8.2445000000000004</real>
+			<real>8.2445</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -628,7 +628,7 @@
 			<key>name</key>
 			<string>Omani Rial</string>
 			<key>rate</key>
-			<real>0.48776999999999998</real>
+			<real>0.48777</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -638,7 +638,7 @@
 			<key>name</key>
 			<string>Pakistani Rupee</string>
 			<key>rate</key>
-			<real>130.49430000000001</real>
+			<real>130.4943</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -648,7 +648,7 @@
 			<key>name</key>
 			<string>Panamanian Balboa</string>
 			<key>rate</key>
-			<real>1.2685999999999999</real>
+			<real>1.2686</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -658,7 +658,7 @@
 			<key>name</key>
 			<string>Paraguayan Guaraní</string>
 			<key>rate</key>
-			<real>5771.6410999999998</real>
+			<real>5771.6411</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -668,7 +668,7 @@
 			<key>name</key>
 			<string>Peruvian Sol</string>
 			<key>rate</key>
-			<real>3.6901000000000002</real>
+			<real>3.6901</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -688,7 +688,7 @@
 			<key>name</key>
 			<string>Polish Zloty</string>
 			<key>rate</key>
-			<real>4.1939000000000002</real>
+			<real>4.1939</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -698,7 +698,7 @@
 			<key>name</key>
 			<string>Qatari Riyal</string>
 			<key>rate</key>
-			<real>4.6177000000000001</real>
+			<real>4.6177</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -708,7 +708,7 @@
 			<key>name</key>
 			<string>Romanian Leu</string>
 			<key>rate</key>
-			<real>4.4008000000000003</real>
+			<real>4.4008</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -718,7 +718,7 @@
 			<key>name</key>
 			<string>Russian Rouble</string>
 			<key>rate</key>
-			<real>51.366500000000002</real>
+			<real>51.3665</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -758,7 +758,7 @@
 			<key>name</key>
 			<string>Singapore Dollar</string>
 			<key>rate</key>
-			<real>1.6133999999999999</real>
+			<real>1.6134</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -768,7 +768,7 @@
 			<key>name</key>
 			<string>South African Rand</string>
 			<key>rate</key>
-			<real>14.008599999999999</real>
+			<real>14.0086</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -788,7 +788,7 @@
 			<key>name</key>
 			<string>Sri Lankan Rupee</string>
 			<key>rate</key>
-			<real>165.72020000000001</real>
+			<real>165.7202</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -818,7 +818,7 @@
 			<key>name</key>
 			<string>Syrian Pound</string>
 			<key>rate</key>
-			<real>204.60069999999999</real>
+			<real>204.6007</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -838,7 +838,7 @@
 			<key>name</key>
 			<string>Thai Baht</string>
 			<key>rate</key>
-			<real>41.134500000000003</real>
+			<real>41.1345</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -848,7 +848,7 @@
 			<key>name</key>
 			<string>Tunisian Dinar</string>
 			<key>rate</key>
-			<real>2.2881999999999998</real>
+			<real>2.2882</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -888,7 +888,7 @@
 			<key>name</key>
 			<string>United Arab Emirates Dirham</string>
 			<key>rate</key>
-			<real>4.6589299999999998</real>
+			<real>4.65893</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -898,7 +898,7 @@
 			<key>name</key>
 			<string>United States Dollar</string>
 			<key>rate</key>
-			<real>1.2685999999999999</real>
+			<real>1.2686</real>
 			<key>symbol</key>
 			<string>$</string>
 		</dict>
@@ -920,7 +920,7 @@
 			<key>name</key>
 			<string>Venezuelan Bolívar</string>
 			<key>rate</key>
-			<real>7.9921800000000003</real>
+			<real>7.99218</real>
 		</dict>
 		<dict>
 			<key>code</key>
@@ -940,7 +940,7 @@
 			<key>name</key>
 			<string>West African Franc</string>
 			<key>rate</key>
-			<real>655.95699999999999</real>
+			<real>655.957</real>
 		</dict>
 	</array>
 	<key>lastUpdated</key>

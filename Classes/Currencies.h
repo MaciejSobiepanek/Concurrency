@@ -9,15 +9,14 @@
 #import <Foundation/Foundation.h>
 #import "BaseModel.h"
 #import "Currency+CoreDataProperties.h"
-
+#import "Settings+CoreDataProperties.h"
 
 extern NSString *const CurrenciesUpdatedNotification;
 
 
 @interface Currencies : NSObject
-
+@property (nonatomic, retain) Settings *settings;
 @property (nonatomic, retain) NSArray *currencies;
-@property (nonatomic, retain) NSDate *lastUpdated;
 
 - (Currency *)currencyForCode:(NSString *)code;
 - (NSArray *)currenciesMatchingSearchString:(NSString *)searchString;

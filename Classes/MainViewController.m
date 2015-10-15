@@ -45,19 +45,20 @@
     [self.topPicker reloadData];
     [self.bottomPicker reloadData];
     
+    Settings *settings = [[Currencies sharedInstance] settings];
     //restore state
-    self.topPicker.selectedIndex = [Settings sharedInstance].topPickerIndex;
-    self.bottomPicker.selectedIndex = [Settings sharedInstance].bottomPickerIndex;
-    self.topPicker.selected = ![Settings sharedInstance].bottomPickerSelected;
-    self.bottomPicker.selected = [Settings sharedInstance].bottomPickerSelected;
+    self.topPicker.selectedIndex = settings.topPickerIndex.integerValue;
+    self.bottomPicker.selectedIndex = settings.bottomPickerIndex.integerValue;
+    self.topPicker.selected = !settings.bottomPickerSelected.boolValue;
+    self.bottomPicker.selected = settings.bottomPickerSelected.boolValue;
     if (self.topPicker.selected)
     {
-        self.topPicker.currencyValue = [Settings sharedInstance].currencyValue;
+        self.topPicker.currencyValue = settings.currencyValue.doubleValue;
         [self.bottomPicker setValue:self.topPicker.currencyValue forCurrency:self.topPicker.currency];
     }
     else
     {
-        self.bottomPicker.currencyValue = [Settings sharedInstance].currencyValue;
+        self.bottomPicker.currencyValue = settings.currencyValue.doubleValue;
         [self.topPicker setValue:self.bottomPicker.currencyValue forCurrency:self.bottomPicker.currency];
     }
     
@@ -90,8 +91,9 @@
     }
     
     //persist state
-    [Settings sharedInstance].topPickerIndex = self.topPicker.selectedIndex;
-    [Settings sharedInstance].bottomPickerIndex = self.bottomPicker.selectedIndex;
+    Settings *settings = [[Currencies sharedInstance] settings];
+    settings.topPickerIndex = @(self.topPicker.selectedIndex);
+    settings.bottomPickerIndex = @(self.bottomPicker.selectedIndex);
 }
 
 - (void)updateCurrencyLabels
@@ -179,7 +181,8 @@
     [self pickerViewCurrencyDidChange:pickerView];
     
     //persist state
-    [Settings sharedInstance].bottomPickerSelected = (pickerView == self.bottomPicker);
+    
+    [[Currencies sharedInstance] settings].bottomPickerSelected = @(pickerView == self.bottomPicker);
 }
 
 - (void)pickerViewCurrencyDidChange:(PickerView *)pickerView
@@ -189,11 +192,11 @@
     //persist state
     if (pickerView == self.topPicker)
     {
-        [Settings sharedInstance].topPickerIndex = pickerView.selectedIndex;
+        [[Currencies sharedInstance] settings].topPickerIndex = @(pickerView.selectedIndex);
     }
     else
     {
-        [Settings sharedInstance].bottomPickerIndex = pickerView.selectedIndex;
+        [[Currencies sharedInstance] settings].bottomPickerIndex = @(pickerView.selectedIndex);
     }
 }
 
@@ -210,7 +213,8 @@
     }
     
     //persist state
-    [Settings sharedInstance].currencyValue = pickerView.currencyValue;
+    
+    [[Currencies sharedInstance] settings].currencyValue = @(pickerView.currencyValue);
 }
 
 @end

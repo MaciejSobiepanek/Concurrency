@@ -103,7 +103,7 @@
         formatter.timeStyle = NSDateFormatterMediumStyle;
     }
     
-    NSString *date = [formatter stringFromDate:[[Currencies sharedInstance] lastUpdated]];
+    NSString *date = [formatter stringFromDate:[[[Currencies sharedInstance] settings] lastUpdate]];
     self.footer.text = [NSString stringWithFormat:@"Last Updated: %@", date];
 }
 

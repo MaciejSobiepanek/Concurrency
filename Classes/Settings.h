@@ -5,15 +5,10 @@
 //  Created by Nick Lockwood on 22/01/2014.
 //  Copyright (c) 2014 Charcoal Design. All rights reserved.
 //
+#import <CoreData/CoreData.h>
 
-#import "BaseModel.h"
+@interface Settings : NSManagedObject
 
-
-@interface Settings : BaseModel
-
-@property (nonatomic, assign) BOOL bottomPickerSelected;
-@property (nonatomic, assign) NSUInteger topPickerIndex;
-@property (nonatomic, assign) NSUInteger bottomPickerIndex;
-@property (nonatomic, assign) double currencyValue;
++(Settings*)currentSettings;
 
 @end

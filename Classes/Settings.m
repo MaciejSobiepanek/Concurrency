@@ -7,49 +7,24 @@
 //
 
 #import "Settings.h"
-
+#import "AppDelegate.h"
 
 @implementation Settings
-{
-    BOOL _saveScheduled;
-}
 
-+ (BMFileFormat)saveFormat
-{
-    return BMFileFormatUserDefaults;
-}
-
-- (void)setUp
-{
-    //add observers for properties, so we can save automatically
-    for (NSString *key in [[self class] codablePropertyKeys])
-    {
-        [self addObserver:self forKeyPath:key options:(NSKeyValueObservingOptions)0 context:NULL];
++(Settings*)currentSettings{
+    NSManagedObjectContext *context = [AppDelegate instance].managedObjectContext;
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Settings"];
+    request.fetchLimit = 1;
+    NSError *fetchError = nil;
+    Settings *settings = [[context executeFetchRequest:request error:&fetchError] firstObject];
+    if (fetchError){
+        return nil;
     }
-}
-
-- (void)tearDown
-{
-    //remove observers
-    for (NSString *key in [[self class] codablePropertyKeys])
-    {
-        [self removeObserver:self forKeyPath:key];
+    else if (!settings){
+        //default values configured in momd
+        settings = [NSEntityDescription insertNewObjectForEntityForName:@"Settings" inManagedObjectContext:context];
     }
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(__unused NSDictionary *)change context:(__unused void *)context
-{
-    if (!_saveScheduled)
-    {
-        _saveScheduled = YES;
-        [self performSelectorOnMainThread:@selector(save) withObject:nil waitUntilDone:NO];
-    }
-}
-
-- (BOOL)save
-{
-    _saveScheduled = NO;
-    return [super save];
+    return settings;
 }
 
 @end

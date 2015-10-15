@@ -47,7 +47,7 @@
 		52061CDD1BCFD3C30027090D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52061CDC1BCFD3C30027090D /* CoreData.framework */; };
 		52061CE11BCFD3E70027090D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52061CDF1BCFD3E70027090D /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		52061CE41BCFD4E90027090D /* Currency+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52061CE31BCFD4E90027090D /* Currency+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
-		52061D0D1BCFE20F0027090D /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52061D0C1BCFE20F0027090D /* BaseModel.m */; settings = {ASSET_TAGS = (); }; };
+		525E8E091BCFF066001A3801 /* Settings+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 525E8E081BCFF066001A3801 /* Settings+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,8 +117,8 @@
 		52061CE01BCFD3E70027090D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		52061CE21BCFD4E90027090D /* Currency+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Currency+CoreDataProperties.h"; sourceTree = "<group>"; };
 		52061CE31BCFD4E90027090D /* Currency+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Currency+CoreDataProperties.m"; sourceTree = "<group>"; };
-		52061D0B1BCFE20F0027090D /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
-		52061D0C1BCFE20F0027090D /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
+		525E8E071BCFF066001A3801 /* Settings+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Settings+CoreDataProperties.h"; sourceTree = "<group>"; };
+		525E8E081BCFF066001A3801 /* Settings+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Settings+CoreDataProperties.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,7 +210,6 @@
 		01412D1B177B3AAE0070C4B2 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				525E8E061BCFEEC6001A3801 /* BaseModel */,
 				01414E311884384F001AC4E7 /* iVersion */,
 				0107C292182981AA00D0EFDB /* iRate */,
 				018151861780997500BB4970 /* CubeController */,
@@ -346,20 +345,13 @@
 		52061CDE1BCFD3D60027090D /* Core Data */ = {
 			isa = PBXGroup;
 			children = (
+				525E8E071BCFF066001A3801 /* Settings+CoreDataProperties.h */,
+				525E8E081BCFF066001A3801 /* Settings+CoreDataProperties.m */,
 				52061CE21BCFD4E90027090D /* Currency+CoreDataProperties.h */,
 				52061CE31BCFD4E90027090D /* Currency+CoreDataProperties.m */,
 				52061CDF1BCFD3E70027090D /* Model.xcdatamodeld */,
 			);
 			name = "Core Data";
-			sourceTree = "<group>";
-		};
-		525E8E061BCFEEC6001A3801 /* BaseModel */ = {
-			isa = PBXGroup;
-			children = (
-				52061D0B1BCFE20F0027090D /* BaseModel.h */,
-				52061D0C1BCFE20F0027090D /* BaseModel.m */,
-			);
-			name = BaseModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -451,11 +443,11 @@
 				01412CF3177AD4D80070C4B2 /* AppDelegate.m in Sources */,
 				0107C297182981AA00D0EFDB /* iRate.m in Sources */,
 				01856E23177CAEA5001FBB6D /* ViewUtils.m in Sources */,
+				525E8E091BCFF066001A3801 /* Settings+CoreDataProperties.m in Sources */,
 				01412CEF177AD4D80070C4B2 /* main.m in Sources */,
 				012AC958188030CC00569235 /* UIViewController+Gradient.m in Sources */,
 				0149D7BF177C248100884EB3 /* Currencies.m in Sources */,
 				01271EE9177B73DA007A186E /* NumberField.m in Sources */,
-				52061D0D1BCFE20F0027090D /* BaseModel.m in Sources */,
 				0134E150177CACF20007BF1A /* iCarousel.m in Sources */,
 				01815189178099D500BB4970 /* CubeController.m in Sources */,
 				52061CE11BCFD3E70027090D /* Model.xcdatamodeld in Sources */,
