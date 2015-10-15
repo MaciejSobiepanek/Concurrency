@@ -6,13 +6,13 @@
 //  Copyright (c) 2013 Charcoal Design. All rights reserved.
 //
 
-#import "BaseModel.h"
 #import <CoreData/CoreData.h>
 
 @interface Currency : NSManagedObject
 
 +(instancetype)nullCurrency;
 
+- (double)exchangeRateToCurrency:(Currency*)otherCurrency;
 - (double)valueInEuros:(double)value;
 - (double)valueFromEuros:(double)euroValue;
 - (double)value:(double)value convertedToCurrency:(Currency *)currency;

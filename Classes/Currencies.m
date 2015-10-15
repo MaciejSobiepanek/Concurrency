@@ -124,17 +124,18 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
 }
 
 -(void)downloadDataFromGoogleCompletionBLock:(nonnull void (^)(BOOL))block{
-    __block NSUInteger currenciesUpdated = 0;
+    __block NSUInteger currenciesUpdatedSuccess = 0;
+    __block NSUInteger currenciesUpdatedFailed = 0;//not really needed now, but good for other usage
+
     for (Currency *currency in _currencies) {
         NSURL *URL = [NSURL URLWithString:[NSString stringWithFormat:@"https://currency-api.appspot.com/api/EUR/%@.json",currency.code]];
         NSURLRequest *request = [NSURLRequest requestWithURL:URL];
         [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-            currenciesUpdated++;
-            
             if (!connectionError && data){
                 NSError *jsonError = nil;
                 NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
                 if (!jsonError){
+                    currenciesUpdatedSuccess++;
                     NSString *code = jsonDict[@"target"];
                     NSString *rate = jsonDict[@"rate"];
                     if ([rate doubleValue] > 0.000001 && code){
@@ -142,13 +143,17 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
                         currency.rate = @([jsonDict[@"rate"] doubleValue]);
                     }
                 }
+                else
+                    currenciesUpdatedFailed++;
             }
+            else
+                currenciesUpdatedFailed++;
             
-            if (currenciesUpdated == _currencies.count){
+            if (currenciesUpdatedSuccess +currenciesUpdatedFailed == _currencies.count){
                 NSLog(@"Downloaded data from currency-api...");
-
-                _settings.lastUpdate = [NSDate date];
-                block(true);
+                if (currenciesUpdatedFailed == 0)
+                    _settings.lastUpdate = [NSDate date];
+                block(currenciesUpdatedFailed == 0);
             }
         }];
     }

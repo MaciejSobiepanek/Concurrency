@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "BaseModel.h"
 #import "Currency+CoreDataProperties.h"
 #import "Settings+CoreDataProperties.h"
 

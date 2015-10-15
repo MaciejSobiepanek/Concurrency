@@ -21,6 +21,7 @@
 @property (nonatomic, weak) IBOutlet UILabel *fromCurrencyLabel;
 @property (nonatomic, weak) IBOutlet UILabel *toCurrencyLabel;
 @property (nonatomic, weak) IBOutlet UILabel *exchangeRateLabel;
+@property (nonatomic, weak) IBOutlet UILabel *lastUpdateDate;
 @property (nonatomic, strong) NumberPad *numberPad;
 
 @end
@@ -40,6 +41,7 @@
     //set up labels
     self.fromCurrencyLabel.font = [self.fromCurrencyLabel.font fontWithSize:13];
     self.toCurrencyLabel.font = [self.toCurrencyLabel.font fontWithSize:13];
+    [self updateDateLabel];
     
     //update pickers
     [self.topPicker reloadData];
@@ -81,6 +83,8 @@
     [self.topPicker reloadData];
     [self.bottomPicker reloadData];
     [self updateCurrencyLabels];
+    [self updateDateLabel];
+
     if (self.topPicker.selected)
     {
         [self.bottomPicker setValue:self.topPicker.currencyValue forCurrency:self.topPicker.currency];
@@ -94,7 +98,17 @@
     Settings *settings = [[Currencies sharedInstance] settings];
     settings.topPickerIndex = @(self.topPicker.selectedIndex);
     settings.bottomPickerIndex = @(self.bottomPicker.selectedIndex);
+
 }
+
+-(void)updateDateLabel{
+    Settings *settings = [[Currencies sharedInstance] settings];
+
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateStyle:NSDateFormatterShortStyle];
+    self.lastUpdateDate.text = [dateFormatter stringFromDate:settings.lastUpdate];
+}
+
 
 - (void)updateCurrencyLabels
 {
@@ -198,6 +212,9 @@
     {
         [[Currencies sharedInstance] settings].bottomPickerIndex = @(pickerView.selectedIndex);
     }
+    
+    _exchangeRateLabel.text = [NSString stringWithFormat:@"%g", [_bottomPicker.currency exchangeRateToCurrency:_topPicker.currency]];
+
 }
 
 - (void)pickerViewValueDidChange:(PickerView *)pickerView
@@ -215,6 +232,7 @@
     //persist state
     
     [[Currencies sharedInstance] settings].currencyValue = @(pickerView.currencyValue);
+
 }
 
 @end

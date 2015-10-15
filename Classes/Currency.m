@@ -49,6 +49,10 @@
     [[self numberFormatter] setLocale:locale];
 }
 
+- (double)exchangeRateToCurrency:(Currency*)otherCurrency{
+    return self.rate.doubleValue/otherCurrency.rate.doubleValue;
+}
+
 
 - (double)valueInEuros:(double)value
 {
