@@ -7,20 +7,15 @@
 //
 
 #import "BaseModel.h"
+#import <CoreData/CoreData.h>
 
-@interface Currency : BaseModel
+@interface Currency : NSManagedObject
 
-@property (nonatomic, copy, readonly) NSString *code;
-@property (nonatomic, copy, readonly) NSString *symbol;
-@property (nonatomic, copy, readonly) NSString *name;
-@property (nonatomic, assign, readonly) double rate;
-@property (nonatomic, assign, getter = isEnabled) BOOL enabled;
-
-+ (instancetype)nullCurrency;
++(instancetype)nullCurrency;
 
 - (double)valueInEuros:(double)value;
 - (double)valueFromEuros:(double)euroValue;
 - (double)value:(double)value convertedToCurrency:(Currency *)currency;
 - (NSString *)localisedStringFromValue:(double)value;
-
++(Currency*)createFromDictionary:(NSDictionary*)dictionary inContext:(NSManagedObjectContext*)context;
 @end

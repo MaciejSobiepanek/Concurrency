@@ -68,12 +68,7 @@
                                                object:nil];
 }
 
-- (void)viewDidUnload
-{
-    [[NSNotificationCenter defaultCenter] removeObserver:self
-                                                    name:CurrenciesUpdatedNotification
-                                                  object:nil];
-}
+
 
 - (void)dealloc
 {

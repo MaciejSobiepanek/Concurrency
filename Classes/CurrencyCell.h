@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Currency.h"
+#import "Currency+CoreDataProperties.h"
 
 @interface CurrencyCell : UITableViewCell
 

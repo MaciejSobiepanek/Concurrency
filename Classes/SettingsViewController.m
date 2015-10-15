@@ -60,9 +60,10 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     Currency *currency = self.currencies[indexPath.row];
-    currency.enabled = !currency.enabled;
+    currency.enabled = @(!currency.enabled.boolValue);
     [self.tableView reloadRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-    [currency save];
+
+    [[NSNotificationCenter defaultCenter] postNotificationName:CurrenciesUpdatedNotification object:self];
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
@@ -102,7 +103,7 @@
         formatter.timeStyle = NSDateFormatterMediumStyle;
     }
     
-    NSString *date = [formatter stringFromDate:[Currencies sharedInstance].lastUpdated];
+    NSString *date = [formatter stringFromDate:[[Currencies sharedInstance] lastUpdated]];
     self.footer.text = [NSString stringWithFormat:@"Last Updated: %@", date];
 }
 

@@ -6,9 +6,9 @@
 //  Copyright (c) 2013 Charcoal Design. All rights reserved.
 //
 
-#import "Currency.h"
+#import "Currency+CoreDataProperties.h"
 #import "Currencies.h"
-
+#import "AppDelegate.h"
 
 @implementation Currency
 {
@@ -40,26 +40,24 @@
 
 - (void)setCode:(NSString *)code
 {
-    _code = code;
+    [self willChangeValueForKey:@"code"];
+    [self setPrimitiveValue:code forKey:@"code"];
+    [self didChangeValueForKey:@"code"];
     
     NSString *localeIdentifier = [NSLocale localeIdentifierFromComponents:@{NSLocaleCurrencyCode: code}];
     NSLocale *locale = [NSLocale localeWithLocaleIdentifier:localeIdentifier];
     [[self numberFormatter] setLocale:locale];
 }
 
-- (void)setSymbol:(NSString *)symbol
-{
-    _symbol = [symbol length]? symbol: nil;
-}
 
 - (double)valueInEuros:(double)value
 {
-    return _rate? (value / _rate): 0.0;
+    return self.rate.doubleValue ? (value / self.rate.doubleValue): 0.0;
 }
 
 - (double)valueFromEuros:(double)euroValue
 {
-    return euroValue * _rate;
+    return euroValue * self.rate.doubleValue;
 }
 
 - (double)value:(double)value convertedToCurrency:(Currency *)currency
@@ -72,21 +70,17 @@
     return [[self numberFormatter] stringFromNumber:@(value)];
 }
 
-- (NSUInteger)hash
-{
-    return [_code hash];
-}
 
-- (BOOL)isEqual:(Currency *)object
-{
-    if (object == self) return YES;
-    if (![object isKindOfClass:[self class]]) return NO;
-    return [object.code isEqualToString:self.code];
-}
-
-- (BOOL)save
-{
-    return [[Currencies sharedInstance] save];
++(Currency*)createFromDictionary:(NSDictionary*)dictionary inContext:(NSManagedObjectContext*)context{
+    Currency *currency = [NSEntityDescription insertNewObjectForEntityForName:@"Currency" inManagedObjectContext:context];
+    currency.name = dictionary[@"name"];
+    currency.code = dictionary[@"code"];
+    currency.rate = dictionary[@"rate"];
+    NSString *symbol = dictionary[@"symbol"];
+    if (symbol)
+        currency.symbol = symbol;
+    currency.enabled = dictionary[@"enabled"];    
+    return currency;
 }
 
 @end

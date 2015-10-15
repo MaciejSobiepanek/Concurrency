@@ -7,7 +7,7 @@
 //
 
 #import "Currencies.h"
-
+#import "AppDelegate.h"
 
 NSString *const CurrenciesUpdatedNotification = @"CurrenciesUpdatedNotification";
 static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/rss.xml";
@@ -18,56 +18,46 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
     NSMutableDictionary *_currenciesByCode;
 }
 
-+ (void)load
-{
-    //auto-initialize
-    [self performSelectorOnMainThread:@selector(sharedInstance) withObject:nil waitUntilDone:NO];
++ (id)sharedInstance {
+    static Currencies *sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[self alloc] init];
+    });
+    return sharedInstance;
 }
 
-+ (BMFileFormat)saveFormat
-{
-    return BMFileFormatXMLPropertyList;
-}
-
-- (void)setWithDictionary:(NSDictionary *)dict
-{
-    //set last updated date
-    NSDate *date = dict[@"lastUpdated"];
-    if (_lastUpdated && [_lastUpdated timeIntervalSinceDate:date] >= 0)
-    {
-        //merge enabled
-        for (NSDictionary *entry in dict[@"currencies"])
-        {
-            Currency *currency = [self currencyForCode:entry[@"code"]];
-            [currency setValue:entry[@"enabled"] forKey:@"enabled"];
-        }
-        return;
-    }
-    _lastUpdated = date;
-    
-    //set currencies
-    _currencies = [[Currency instancesWithArray:dict[@"currencies"]] sortedArrayUsingComparator:^NSComparisonResult(Currency *a, Currency *b) {
+- (id)init {
+    if (self = [super init]) {
+        self.lastUpdated = [NSDate date];
         
-        return [a.name caseInsensitiveCompare:b.name];
-    }];
-    
-    //set currencies by code
-    _currenciesByCode = [NSMutableDictionary dictionaryWithObjects:_currencies forKeys:[_currencies valueForKeyPath:@"code"]];
-    
-    //download update
-    [self update];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update) name:UIApplicationWillEnterForegroundNotification object:nil];
+        //set currencies
+        self.currencies = [Currencies allCurrenciesSorted];
+        
+        //set currencies by code
+        _currenciesByCode = [NSMutableDictionary dictionaryWithObjects:_currencies forKeys:[_currencies valueForKeyPath:@"code"]];
+        
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(update) name:UIApplicationWillEnterForegroundNotification object:nil];
+        
+        
+        [self update];
+    }
+    return self;
 }
+
+
 
 - (Currency *)currencyForCode:(NSString *)code
 {
     Currency *currency = _currenciesByCode[code];
+    /*
     if (!currency){
         currency = [Currency instance];
         [currency setValue:code forKey:@"code"];
         [currency setValue:code forKey:@"name"];
         _currenciesByCode[code] = currency;
-    }
+    }*/
     return currency;
 }
 
@@ -93,9 +83,9 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
 
 
 -(void)downloadDataFromYahooCompletionBLock:(nonnull void (^)(BOOL))block{
-    NSString *updateURL = @"ahttps://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(";
+    NSString *updateURL = @"https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.xchange%20where%20pair%20in%20(";
     for (Currency *currency in _currencies) {
-        updateURL = [updateURL stringByAppendingFormat:@"%%22%@EUR%%22%@", currency.code, _currencies.lastObject == currency ? @"" : @"%2C"];
+        updateURL = [updateURL stringByAppendingFormat:@"%%22EUR%@%%22%@", currency.code, _currencies.lastObject == currency ? @"" : @"%2C"];
     }
     updateURL = [updateURL stringByAppendingString:@")&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"];
     
@@ -118,15 +108,16 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
                 NSArray *rates = jsonDict[@"query"][@"results"][@"rate"];
                 
                 for (NSDictionary *entry in rates)  {
-                    NSString *code = [[entry[@"Name"] componentsSeparatedByString:@"/"] firstObject];
+                    NSString *code = [[entry[@"Name"] componentsSeparatedByString:@"/"] lastObject];
                     if (!code) continue;
                     
                     NSString *rate = entry[@"Rate"];
                     if ([rate doubleValue] < 0.000001) continue;
                     
                     Currency *currency = [self currencyForCode:code];
-                    [currency setValue:rate forKey:@"rate"];
+                    currency.rate = @(rate.doubleValue);
                 }
+                NSLog(@"Downloaded data from yahoo");
                 block(true);
             }
         }
@@ -140,18 +131,23 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
         NSURLRequest *request = [NSURLRequest requestWithURL:URL];
         [NSURLConnection sendAsynchronousRequest:request queue:[NSOperationQueue mainQueue] completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
             currenciesUpdated++;
-
+            
             if (!connectionError && data){
                 NSError *jsonError = nil;
                 NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:&jsonError];
                 if (!jsonError){
                     NSString *code = jsonDict[@"target"];
-                    Currency *currency = [self currencyForCode:code];
-                    [currency setValue:jsonDict[@"rate"] forKey:@"rate"];
+                    NSString *rate = jsonDict[@"rate"];
+                    if ([rate doubleValue] > 0.000001 && code){
+                        Currency *currency = [self currencyForCode:code];
+                        currency.rate = @([jsonDict[@"rate"] doubleValue]);
+                    }
                 }
             }
             
             if (currenciesUpdated == _currencies.count){
+                NSLog(@"Downloaded data from currency-api...");
+
                 _lastUpdated = [NSDate date];
                 block(true);
             }
@@ -192,13 +188,45 @@ static NSString *const UpdateURL = @"https://themoneyconverter.com/rss-feed/EUR/
 
 - (BOOL)save
 {
+    [[AppDelegate instance] saveContext];
     [[NSNotificationCenter defaultCenter] postNotificationName:CurrenciesUpdatedNotification object:self];
-    return [super save];
+    return true;
 }
 
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
+
++(NSArray*)allCurrenciesSorted{
+    NSManagedObjectContext *context = [AppDelegate instance].managedObjectContext;
+    NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:@"Currency"];
+    fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"name" ascending:true]];
+    NSError *fetchError = nil;
+    NSArray *currencies = [context executeFetchRequest:fetchRequest error:&fetchError];
+    if (fetchError){
+        return nil;
+    }
+    //when app first start we have to fill core data with data from plist file
+    else if (currencies.count == 0){
+        [Currencies createStartData];
+        currencies = [context executeFetchRequest:fetchRequest error:&fetchError];
+        
+        if (fetchError) return nil;
+    }
+    return currencies;
+}
+
++(void)createStartData{
+    NSManagedObjectContext *context = [AppDelegate instance].managedObjectContext;
+    NSDictionary *dictionary = [NSDictionary dictionaryWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Currencies" ofType:@"plist"]];
+    NSArray *currencies = dictionary[@"currencies"];
+    for (NSDictionary *currencyDict in currencies) {
+        [Currency createFromDictionary:currencyDict inContext:context];
+    }
+    
+    [[AppDelegate instance] saveContext];
+}
+
 
 @end

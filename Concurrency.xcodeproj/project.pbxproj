@@ -27,7 +27,6 @@
 		01414E361884384F001AC4E7 /* iVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 01414E341884384F001AC4E7 /* iVersion.m */; };
 		014319D819EC2A1600851C73 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 014319D719EC2A1600851C73 /* Images.xcassets */; };
 		0149D7BF177C248100884EB3 /* Currencies.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149D7BE177C248100884EB3 /* Currencies.m */; };
-		0149D7C4177C24C900884EB3 /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 0149D7C3177C24C900884EB3 /* BaseModel.m */; };
 		016EA7311875E1DD0005FADC /* CubeController+Wiggle.m in Sources */ = {isa = PBXBuildFile; fileRef = 016EA7301875E1DD0005FADC /* CubeController+Wiggle.m */; };
 		016EA73518760AB10005FADC /* ColorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 016EA73418760AB10005FADC /* ColorUtils.m */; };
 		016EA73818771FF50005FADC /* UIView+TintColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 016EA73718771FF50005FADC /* UIView+TintColor.m */; };
@@ -45,6 +44,10 @@
 		01856E23177CAEA5001FBB6D /* ViewUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 01856E22177CAEA5001FBB6D /* ViewUtils.m */; };
 		01A657DB188FC8580060550D /* Settings.m in Sources */ = {isa = PBXBuildFile; fileRef = 01A657DA188FC8580060550D /* Settings.m */; };
 		01E7EDB718292E750083F979 /* Currencies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 01E7ECBB18292E740083F979 /* Currencies.plist */; };
+		52061CDD1BCFD3C30027090D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52061CDC1BCFD3C30027090D /* CoreData.framework */; };
+		52061CE11BCFD3E70027090D /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 52061CDF1BCFD3E70027090D /* Model.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
+		52061CE41BCFD4E90027090D /* Currency+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 52061CE31BCFD4E90027090D /* Currency+CoreDataProperties.m */; settings = {ASSET_TAGS = (); }; };
+		52061D0D1BCFE20F0027090D /* BaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 52061D0C1BCFE20F0027090D /* BaseModel.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,8 +84,6 @@
 		014319D719EC2A1600851C73 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		0149D7BD177C248100884EB3 /* Currencies.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Currencies.h; sourceTree = "<group>"; };
 		0149D7BE177C248100884EB3 /* Currencies.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Currencies.m; sourceTree = "<group>"; };
-		0149D7C2177C24C900884EB3 /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
-		0149D7C3177C24C900884EB3 /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BaseModel.m; path = ../BaseModel/BaseModel.m; sourceTree = "<group>"; };
 		016EA72F1875E1DD0005FADC /* CubeController+Wiggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CubeController+Wiggle.h"; sourceTree = "<group>"; };
 		016EA7301875E1DD0005FADC /* CubeController+Wiggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CubeController+Wiggle.m"; sourceTree = "<group>"; };
 		016EA73318760AB10005FADC /* ColorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorUtils.h; sourceTree = "<group>"; };
@@ -112,6 +113,12 @@
 		01A657D9188FC8580060550D /* Settings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		01A657DA188FC8580060550D /* Settings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Settings.m; sourceTree = "<group>"; };
 		01E7ECBB18292E740083F979 /* Currencies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Currencies.plist; sourceTree = "<group>"; };
+		52061CDC1BCFD3C30027090D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		52061CE01BCFD3E70027090D /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		52061CE21BCFD4E90027090D /* Currency+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Currency+CoreDataProperties.h"; sourceTree = "<group>"; };
+		52061CE31BCFD4E90027090D /* Currency+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Currency+CoreDataProperties.m"; sourceTree = "<group>"; };
+		52061D0B1BCFE20F0027090D /* BaseModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseModel.h; sourceTree = "<group>"; };
+		52061D0C1BCFE20F0027090D /* BaseModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +126,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52061CDD1BCFD3C30027090D /* CoreData.framework in Frameworks */,
 				01412CE5177AD4D80070C4B2 /* CoreGraphics.framework in Frameworks */,
 				01412CE7177AD4D80070C4B2 /* UIKit.framework in Frameworks */,
 				01412CE3177AD4D80070C4B2 /* Foundation.framework in Frameworks */,
@@ -169,6 +177,7 @@
 		01412CE1177AD4D80070C4B2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52061CDC1BCFD3C30027090D /* CoreData.framework */,
 				01412CE2177AD4D80070C4B2 /* Foundation.framework */,
 				01412CE4177AD4D80070C4B2 /* CoreGraphics.framework */,
 				01412CE6177AD4D80070C4B2 /* UIKit.framework */,
@@ -201,12 +210,12 @@
 		01412D1B177B3AAE0070C4B2 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				525E8E061BCFEEC6001A3801 /* BaseModel */,
 				01414E311884384F001AC4E7 /* iVersion */,
 				0107C292182981AA00D0EFDB /* iRate */,
 				018151861780997500BB4970 /* CubeController */,
 				01856E20177CAEA5001FBB6D /* ViewUtils */,
 				0134E14D177CACF20007BF1A /* iCarousel */,
-				0149D7C1177C24C900884EB3 /* BaseModel */,
 				016EA73218760AB10005FADC /* ColorUtils */,
 			);
 			path = Libraries;
@@ -266,6 +275,7 @@
 		0149D7BC177C245100884EB3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52061CDE1BCFD3D60027090D /* Core Data */,
 				018151951780C26700BB4970 /* Currency.h */,
 				018151961780C26700BB4970 /* Currency.m */,
 				0149D7BD177C248100884EB3 /* Currencies.h */,
@@ -274,14 +284,6 @@
 				01A657DA188FC8580060550D /* Settings.m */,
 			);
 			name = Model;
-			sourceTree = "<group>";
-		};
-		0149D7C1177C24C900884EB3 /* BaseModel */ = {
-			isa = PBXGroup;
-			children = (
-				0149D7C2177C24C900884EB3 /* BaseModel.h */,
-			);
-			path = BaseModel;
 			sourceTree = "<group>";
 		};
 		016EA72E1875E1AF0005FADC /* Categories */ = {
@@ -300,7 +302,6 @@
 		016EA73218760AB10005FADC /* ColorUtils */ = {
 			isa = PBXGroup;
 			children = (
-				0149D7C3177C24C900884EB3 /* BaseModel.m */,
 				016EA73318760AB10005FADC /* ColorUtils.h */,
 				016EA73418760AB10005FADC /* ColorUtils.m */,
 			);
@@ -340,6 +341,25 @@
 				01E7ECBB18292E740083F979 /* Currencies.plist */,
 			);
 			path = Data;
+			sourceTree = "<group>";
+		};
+		52061CDE1BCFD3D60027090D /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				52061CE21BCFD4E90027090D /* Currency+CoreDataProperties.h */,
+				52061CE31BCFD4E90027090D /* Currency+CoreDataProperties.m */,
+				52061CDF1BCFD3E70027090D /* Model.xcdatamodeld */,
+			);
+			name = "Core Data";
+			sourceTree = "<group>";
+		};
+		525E8E061BCFEEC6001A3801 /* BaseModel */ = {
+			isa = PBXGroup;
+			children = (
+				52061D0B1BCFE20F0027090D /* BaseModel.h */,
+				52061D0C1BCFE20F0027090D /* BaseModel.m */,
+			);
+			name = BaseModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -417,12 +437,12 @@
 			files = (
 				01856E16177C7F56001FBB6D /* PickerCellView.m in Sources */,
 				01A657DB188FC8580060550D /* Settings.m in Sources */,
+				52061CE41BCFD4E90027090D /* Currency+CoreDataProperties.m in Sources */,
 				016EA7311875E1DD0005FADC /* CubeController+Wiggle.m in Sources */,
 				016EA73818771FF50005FADC /* UIView+TintColor.m in Sources */,
 				01414E361884384F001AC4E7 /* iVersion.m in Sources */,
 				018151A117816AC100BB4970 /* CurrencyCell.m in Sources */,
 				016EA73D187723B40005FADC /* SearchBar.m in Sources */,
-				0149D7C4177C24C900884EB3 /* BaseModel.m in Sources */,
 				01856E1B177CAD3D001FBB6D /* PickerView.m in Sources */,
 				01271EEB177B73EB007A186E /* NumberPad.m in Sources */,
 				016EA73518760AB10005FADC /* ColorUtils.m in Sources */,
@@ -435,8 +455,10 @@
 				012AC958188030CC00569235 /* UIViewController+Gradient.m in Sources */,
 				0149D7BF177C248100884EB3 /* Currencies.m in Sources */,
 				01271EE9177B73DA007A186E /* NumberField.m in Sources */,
+				52061D0D1BCFE20F0027090D /* BaseModel.m in Sources */,
 				0134E150177CACF20007BF1A /* iCarousel.m in Sources */,
 				01815189178099D500BB4970 /* CubeController.m in Sources */,
+				52061CE11BCFD3E70027090D /* Model.xcdatamodeld in Sources */,
 				0181519117809E1800BB4970 /* SettingsViewController.m in Sources */,
 				018151971780C26700BB4970 /* Currency.m in Sources */,
 			);
@@ -569,6 +591,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		52061CDF1BCFD3E70027090D /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				52061CE01BCFD3E70027090D /* Model.xcdatamodel */,
+			);
+			currentVersion = 52061CE01BCFD3E70027090D /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 01412CD7177AD4D80070C4B2 /* Project object */;
 }

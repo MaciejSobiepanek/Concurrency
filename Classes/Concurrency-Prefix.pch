@@ -17,7 +17,6 @@
 
 #import "ViewUtils.h"
 #import "iCarousel.h"
-#import "BaseModel.h"
 #import "CubeController.h"
 
 #endif

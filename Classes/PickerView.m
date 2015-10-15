@@ -101,14 +101,14 @@
 {
     //update currencies
     NSMutableArray *currencies = [NSMutableArray array];
-    if ([[Currencies sharedInstance].enabledCurrencies count])
+    if ([[[Currencies sharedInstance] enabledCurrencies] count])
     {
         while ([currencies count] < 6)
         {
-            [currencies addObjectsFromArray:[Currencies sharedInstance].enabledCurrencies];
+            [currencies addObjectsFromArray:[[Currencies sharedInstance] enabledCurrencies]];
         }
     }
-    else
+    else if (0)
     {
         while ([currencies count] < 6)
         {

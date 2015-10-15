@@ -8,21 +8,23 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseModel.h"
-#import "Currency.h"
+#import "Currency+CoreDataProperties.h"
 
 
 extern NSString *const CurrenciesUpdatedNotification;
 
 
-@interface Currencies : BaseModel
+@interface Currencies : NSObject
 
-@property (nonatomic, copy, readonly) NSArray *currencies;
-@property (nonatomic, copy, readonly) NSArray *enabledCurrencies;
-@property (nonatomic, strong, readonly) NSDate *lastUpdated;
+@property (nonatomic, retain) NSArray *currencies;
+@property (nonatomic, retain) NSDate *lastUpdated;
 
 - (Currency *)currencyForCode:(NSString *)code;
 - (NSArray *)currenciesMatchingSearchString:(NSString *)searchString;
 - (void)updateWithBlock:(void (^)(void))block;
 - (void)update;
+- (NSArray*)enabledCurrencies;
+
++ (id)sharedInstance;
 
 @end

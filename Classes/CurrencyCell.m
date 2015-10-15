@@ -61,8 +61,8 @@
     self.symbolLabel.font = [self.symbolLabel.font fontWithSize:currency.symbol? 30: 17];
     self.nameLabel.text = currency.name ?: @"-";
     self.nameLabel.text = currency.name;
-    self.accessoryType = currency.enabled? UITableViewCellAccessoryCheckmark: UITableViewCellAccessoryNone;
-    self.backgroundView.backgroundColor = currency.enabled? [[[self class] tintColor] colorBlendedWithColor:[UIColor whiteColor] factor: 0.85]: [UIColor whiteColor];
+    self.accessoryType = currency.enabled.boolValue ? UITableViewCellAccessoryCheckmark: UITableViewCellAccessoryNone;
+    self.backgroundView.backgroundColor = currency.enabled.boolValue ? [[[self class] tintColor] colorBlendedWithColor:[UIColor whiteColor] factor: 0.85]: [UIColor whiteColor];
 }
 
 @end
